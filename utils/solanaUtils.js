@@ -1,11 +1,13 @@
 const { Connection, PublicKey } = require('@solana/web3.js');
 const { Program, AnchorProvider } = require('@project-serum/anchor');
+import fs from 'fs';
 
 // Red de Solana (devnet)
-const nodeUrl = "https://api.devnet.solana.com"
+const nodeUrl = "http://api.devnet.solana.com"
 
 // Cargar el ABI de tu contrato
-const abi = require('./registry_project.json');
+const idl = JSON.parse(fs.readFileSync('/home/eduardo/Desktop/GithubSolana/solana-scm/target/idl'));
+//const abi = require('./registry_project.json');
 const { registry } = require('@project-serum/anchor/dist/cjs/utils');
 
 // Cargar la clave privada al usuario
@@ -16,7 +18,7 @@ const connection = new Connection(nodeUrl);
 const provider  = new AnchorProvider(Connection, { wallet: {privateKey: userPrivateKey}});
 
 // Crear instancia del programa
-const program = new Program(abi, new PublicKey('A5i8uPKdCycDG3nbGCCAUiLzHEc4ddpfeYGQhPEWuaTJ'), provider);
+const program = new Program(idl, new PublicKey('A5i8uPKdCycDG3nbGCCAUiLzHEc4ddpfeYGQhPEWuaTJ'), provider);
 
 // Funciones de la API
 async function getRegistryData(registryName) {
