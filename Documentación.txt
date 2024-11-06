@@ -1,0 +1,6 @@
+package.json: Contiene las dependencias del proyecto, scripts, e información relevante.
+index.js: Es el punto de entrada de la aplicación. Aqui se configura el servidor express y se definen rutas principales.
+routes/devices.js: Contiene las rutas relacionadas con los dispositivos(obtener información, crear, actualizar, eliminar).
+controllers/deviceControllers.js: Contiene la lógica de negocio para las operaciones realizadas con los dispositivos.
+utils/solanaUtils.js: Contiene funciones auxiliares para interactuar con Solana, como conectar a la red, obtener información de cuentas.
+.env: Archivo para almacenar variables de entorno sensibles, como claves API, URLs de la red Solana, etc.
