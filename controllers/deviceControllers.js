@@ -4,12 +4,10 @@ const { solanaUtils } = require('../utils/solanaUtils');
 const connection = new Connection(process.env.SOLANA_RPC_URL);
 
 const getDevice = async (req, res) => {
-    const deviceId = req.params.deviceId;
-    const deviceAccount = new PublicKey(deviceId);
+    const { registryName, deviceName } = req.params;
 
     try{
-        const accountInfo = await connection.getAccountInfo(deviceAccount);
-        const deviceData = solanaUtils.extractDeviceData(accountInfo);
+        const deviceData = await solanaUtils.getDeviceData(registryName, deviceName);
         res.json(deviceData);
     } catch (error) {
         console.error(error);
