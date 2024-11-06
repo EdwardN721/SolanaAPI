@@ -1,12 +1,12 @@
-const { Connection, PublicKey } = require('@solana/web3.js');
-const { Program, AnchorProvider } = require('@project-serum/anchor');
+import { Connection, PublicKey } from '@solana/web3.js';
+import { Program, AnchorProvider } from '@project-serum/anchor';
 import fs from 'fs';
 
 // Red de Solana (devnet)
 const nodeUrl = "http://api.devnet.solana.com"
 
 // Cargar el ABI de tu contrato
-const idl = JSON.parse(fs.readFileSync('/home/eduardo/Desktop/GithubSolana/solana-scm/target/idl'));
+const idl = JSON.parse(fs.readFileSync('/home/eduardo/Desktop/GithubSolana/solana-scm/target/idl/registry_project.json'));
 //const abi = require('./registry_project.json');
 const { registry } = require('@project-serum/anchor/dist/cjs/utils');
 

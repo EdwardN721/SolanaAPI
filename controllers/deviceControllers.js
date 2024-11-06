@@ -1,5 +1,5 @@
-const { Connection, PublicKey } = require('@solana/web3.js');
-const { solanaUtils } = require('../utils/solanaUtils');
+import { solanaUtils } from '../utils/solanaUtils';
+import { Connection, PublicKey } from '@solana/web3.js';
 
 const connection = new Connection(process.env.SOLANA_RPC_URL);
 
