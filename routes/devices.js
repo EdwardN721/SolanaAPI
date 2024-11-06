@@ -1,9 +1,9 @@
 import express from 'express';
-import deviceController from '../controllers/deviceControllers';
+import { getDevice } from '../controllers/deviceControllers.js';
 
 const router = express.Router();
 
-router.get('/:deviceId', deviceController.getDevice);
+router.get('/:deviceId', getDevice);
 
 // Otras rutas: crear actualizar, eliminar
-module.exports = router;
+export default router;
