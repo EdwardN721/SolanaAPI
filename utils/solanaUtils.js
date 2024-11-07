@@ -77,7 +77,11 @@ export async function getDeviceData(registryName, deviceName) {
     };
   } catch (error) {
     console.error('Error al obtener los datos del dispositivo:', error);
-    throw error;
+    if (error.message === 'Dispositivo no encontrado') {
+      return res.status(404).json({ error: 'Dispositivo no encontrado en el registro' });
+    } else {
+      return res.status(500).json({ error: 'Error interno del servidor' });
+    }
   }
 }
 
