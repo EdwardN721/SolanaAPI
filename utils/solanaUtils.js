@@ -88,7 +88,8 @@ export async function getDeviceData(registryName, deviceName) {
   }
 }
 
-// Ejemplo de uso
+
+/* // Ejemplo de uso
 async function main() {
   try {
     const registryName = 'myRegistry';
@@ -106,4 +107,4 @@ async function main() {
   }
 }
 
-main();
+main(); */
