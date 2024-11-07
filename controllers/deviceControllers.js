@@ -1,4 +1,4 @@
-import { getDeviceData} from '../utils/solanaUtils.js';
+import { getDeviceData } from '../utils/solanaUtils.js';
 import { Connection, PublicKey } from '@solana/web3.js';
 
 const connection = new Connection(process.env.SOLANA_RPC_URL);
@@ -6,7 +6,7 @@ const connection = new Connection(process.env.SOLANA_RPC_URL);
 export const getDevice = async (req, res) => {
     const { registryName, deviceName } = req.params;
 
-    try{
+    try {
         const deviceData = await getDeviceData(registryName, deviceName);
         res.json(deviceData);
     } catch (error) {
@@ -15,4 +15,4 @@ export const getDevice = async (req, res) => {
     }
 };
 
-module.exports = { getDevice };
+//module.exports = { getDevice };
