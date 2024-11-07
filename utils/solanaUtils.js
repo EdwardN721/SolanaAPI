@@ -7,7 +7,10 @@ const { Solana } = pkg;
 const nodeUrl = "http://api.devnet.solana.com"; // Cambia a la red que estés utilizando
 
 // Carga el IDL
-const idl = JSON.parse(fs.readFileSync('/home/eduardo/Desktop/GithubSolana/solana-scm/target/idl/registry_project.json'));
+const idlPath = '/home/eduardo/Desktop/GithubSolana/solana-scm/target/idl/registry_project.json';
+console.log('Ruta del IDL:', idlPath);
+const idl = JSON.parse(fs.readFileSync(idlPath));
+console.log('Contenido del IDL:', idl);
 
 // Cargar la clave privada (asegúrate de manejar esto de forma segura)
 const secretPhrase = fs.readFileSync('/home/eduardo/Desktop/GithubSolana/SolanaAPI/secret.txt', 'utf8');
